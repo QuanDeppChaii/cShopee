@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, url_for, send_from_directory
+from flask import Flask, render_template, request, send_from_directory
 from pathlib import Path
 from generator import create_html_file
 
 app = Flask(__name__)
-app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 GENERATED_DIR = Path("/tmp/generated")
 GENERATED_DIR.mkdir(parents=True, exist_ok=True)
@@ -18,10 +17,12 @@ def create():
     content = request.form.get("content", "").strip()
     shopee_url = request.form.get("shopee_url", "").strip()
 
-    filename = create_html_file(image_url, content, shopee_url)
-    link = url_for("generated_file", filename=filename, _external=True)
+    file_id = create_html_file(image_url, content, shopee_url)
+
+    link = f"/{file_id}"
     return render_template("form.html", link=link)
 
-@app.route("/generated/<path:filename>")
-def generated_file(filename):
+@app.route("/<file_id>")
+def open_file(file_id):
+    filename = f"{file_id}.html"
     return send_from_directory(GENERATED_DIR, filename)

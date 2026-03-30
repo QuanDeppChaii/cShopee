@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, send_from_directory
 from pathlib import Path
-from utils.generator import create_html_file
+from generator import create_html_file
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True

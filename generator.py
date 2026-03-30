@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta content="NEWS" property="og:type">
 
     <!-- THUMBNAIL FACEBOOK -->
-    <meta property="og:image" content="https://dantri.live/ok/okok.png">
+    <meta property="og:image" content="https://i.imgur.com/wvjln8a.png">
     <meta property="og:image:secure_url" content="https://i.imgur.com/wvjln8a.png">
     <meta property="og:image:secure_url" content="https://i.imgur.com/wvjln8a.png">
     <meta property="og:image:type" content="image/png">

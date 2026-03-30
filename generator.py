@@ -2,8 +2,8 @@ from urllib.parse import quote
 from uuid import uuid4
 from pathlib import Path
 
-GENERATED_DIR = Path("generated")
-GENERATED_DIR.mkdir(exist_ok=True)
+GENERATED_DIR = Path("/tmp/generated")
+GENERATED_DIR.mkdir(parents=True, exist_ok=True)
 
 def create_html_file(img, content, link):
     filename = f"{uuid4()}.html"
@@ -46,5 +46,4 @@ setTimeout(function(){{
 
     file_path = GENERATED_DIR / filename
     file_path.write_text(html, encoding="utf-8")
-
     return filename

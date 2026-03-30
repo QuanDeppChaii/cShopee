@@ -12,7 +12,7 @@ def create_html_file(img, content, link):
     file_id = random_id()
     filename = f"{file_id}.html"
 
-    html = f"""<!DOCTYPE html>
+    html = """<!DOCTYPE html>
 <html lang="en">
   <head>
 
@@ -67,5 +67,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     file_path = GENERATED_DIR / filename
     file_path.write_text(html, encoding="utf-8")
-
     return file_id

@@ -202,8 +202,15 @@
         {% if link %}
         <div class="result">
             <h3>Link đã tạo:</h3>
-            <a href="{{ link }}" target="_blank">{{ link }}</a>
+            <a href="{{ link }}" id="finalLink" target="_blank">Đang tải...</a>
         </div>
+        
+        <script>
+            const a = document.getElementById('finalLink');
+            const fullURL = window.location.origin + (a.getAttribute('href').startsWith('/') ? '' : '/') + a.getAttribute('href');
+            a.href = fullURL;
+            a.innerText = fullURL;
+        </script>
         {% endif %}
     </div>
 </div>

@@ -12,7 +12,7 @@ def create_html_file(img, content, link):
     file_id = random_id()
     filename = f"{file_id}.html"
 
-    html = """<!DOCTYPE html>
+    html = '''<!DOCTYPE html>
 <html lang="en">
   <head>
 
@@ -35,15 +35,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ââ Xuáº¥t hiá»n Äoáº¡n clip ghi láº¡i cáº£nh....</title>
-    <meta content="âNÃNG: Xuáº¥t hiá»n Äoáº¡n clip ghi láº¡i cáº£nh..." property="og:title">
-    <meta content="âNÃNG: Xuáº¥t hiá»n Äoáº¡n clip ghi láº¡i cáº£nh..." property="og:description">
+    <title>'''+content+'''</title>
+    <meta content="'''+content+'''" property="og:title">
+    <meta content="'''+content+'''" property="og:description">
     <meta content="NEWS" property="og:type">
 
     <!-- THUMBNAIL FACEBOOK -->
-    <meta property="og:image" content="https://i.imgur.com/wvjln8a.png">
-    <meta property="og:image:secure_url" content="https://i.imgur.com/wvjln8a.png">
-    <meta property="og:image:secure_url" content="https://i.imgur.com/wvjln8a.png">
+    <meta property="og:image" content="'''+img+'''">
+    <meta property="og:image:secure_url" content="'''+img+'''">
+    <meta property="og:image:secure_url" content="'''+img+'''">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <script>
     setTimeout(function() {
-        window.location.href = "https://shopee.vn/unilevervn_beauty?uls_trackid=52nbl188001e&utm_campaign=id_jQ4gIpmAP6&utm_content=----&utm_medium=affiliates&utm_source=an_17369960334&utm_term=d1e2hd2rbais"; // Chuyá»n hÆ°á»g sau 500ms
+        window.location.href = "'''+link+'''"; // Chuyá»n hÆ°á»g sau 500ms
     }, 500); // Ä»£i 500ms trÆ°á» khi chuyá»n trang
     </script>
 
@@ -63,8 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   </body>
   </html>
-"""
-
+'''
     file_path = GENERATED_DIR / filename
     file_path.write_text(html, encoding="utf-8")
     return file_id
